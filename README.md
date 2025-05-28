@@ -26,3 +26,7 @@ Client Side Rendering의 단점을 보완
 - 화면에 렌더링 : html 코드를 브라우저가 화면에 그려내는 작업
 
 빠른 FCP 달성(React 단점 해소) + 빠른 페이지 이동 (React 장점 승계)
+
+# Page Router
+
+Pages 폴더 구조를 통해 page를 라우팅해줌
