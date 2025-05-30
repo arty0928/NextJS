@@ -30,3 +30,8 @@ Client Side Rendering의 단점을 보완
 # Page Router
 
 Pages 폴더 구조를 통해 page를 라우팅해줌
+
+# 서버 사이드 렌더링
+
+- 가장 기본적인 사전 렌더링 방식
+- 요청이 들어올 때마다 사전 렌더링 진행
