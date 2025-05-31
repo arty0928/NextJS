@@ -14,7 +14,6 @@ export const getStaticProps = async () => {
   const [allBooks, recoBooks] = await Promise.all([fetchBooks(), fetchRandomBooks()]);
   return {
     props: { allBooks, recoBooks },
-    revalidate: 3,
   };
 };
 
