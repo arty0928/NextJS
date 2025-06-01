@@ -85,3 +85,20 @@ JS 번들 크기 커짐 -> hydration 오래 걸림 -> TTI까지 늦어짐
   - 사전렌더링 1회 + JS 번들에 묶여 hydration 과정에서 렌더링 1횐
 
 => 페이지의 대부분을 서버 컴포넌트로 구성할 것 권장, 클라이언트 컴포넌트는 꼭 필요한 경우에만 사용
+
+## React Server Component 주의 사항
+
+1. 서버 컴포넌트에서는 브라우저에서 실행될 코드가 포함되면 안된다.
+   (useState,useEffect, onClick, onChange ,,)
+2. 클라이언트 컴포넌트는 클라이언트에서만 실행되지 않는다.
+   (사전 렌더링 시 서버에서 1회 + 브라우저에서 hydration 진행 시 렌더링 1회)
+3. 클라이언트 컴포넌트에서 서버 컴포넌트를 import 할 수 없다. (hydration 시 서버 컴포넌트는 포함이 되지 않으므로, 브라우저에 없는 코드를 import 하게 됨)
+   -> 하지만 이런 경우 NextJS는 자동으로 서버컴포넌트 -> 클라이언트 컴포넌트로 변경
+   (개발 도중에 만나는 오류 방지)
+4. 서버 컴포넌트에서 클라이언트 컴포넌트에게 직렬화(문자열, Byte,,)되지 않는 Props는 전달 X
+
+### RSC (React Server Component)
+
+- React Server Component이 순수한 데이터
+- React Server Component를 직렬화한 결과
+- 함수는 직렬화가 불가능하므로 Props로 전달 X
