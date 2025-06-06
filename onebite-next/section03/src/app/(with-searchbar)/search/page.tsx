@@ -1,6 +1,13 @@
-import { SearchParams } from "next/dist/server/request/search-params";
+import ClientComponent from "@/components/client-component";
 
 export default async function Page({ searchParams }: { searchParams: Promise<{ q: string }> }) {
   const { q } = await searchParams;
-  return <div>search page{q}</div>;
+  return (
+    <div>
+      search page{q}
+      <ClientComponent>
+        <></>
+      </ClientComponent>
+    </div>
+  );
 }

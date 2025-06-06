@@ -102,3 +102,6 @@ JS 번들 크기 커짐 -> hydration 오래 걸림 -> TTI까지 늦어짐
 - React Server Component이 순수한 데이터
 - React Server Component를 직렬화한 결과
 - 함수는 직렬화가 불가능하므로 Props로 전달 X
+
+Client Component -> JS 번들
+Server Componenet -> RSC 페이로드
